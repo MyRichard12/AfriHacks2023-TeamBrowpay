@@ -4,7 +4,7 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import otpGenerator from "otp-generator";
 import { encrypt, randomizer } from "../connection/middleware/encyptor.js";
-import crypto, { generateKey } from 'crypto'
+import crypto from 'crypto'
 
 export const registerUser = async (req, res) => {
   try {
