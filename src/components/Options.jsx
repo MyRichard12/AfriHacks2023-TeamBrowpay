@@ -5,7 +5,7 @@ import AddIcon from '@mui/icons-material/Add';
 import { HelperModalAdd } from './index.js'
 import { useDispatch } from 'react-redux';
 import CloseIcon from '@mui/icons-material/Close';
-import { deleteBookFromInventory } from '../redux/actions/Inventory.action.js';
+import { deleteProductFromInventory } from '../redux/actions/Inventory.action.js';
 
 const Options = ({ showLowStock, setShowLowStock, selected, setSelected }) => {
 
@@ -21,7 +21,7 @@ const Options = ({ showLowStock, setShowLowStock, selected, setSelected }) => {
     };
 
     const handleDelete = async () => {
-        dispatch(deleteBookFromInventory(selected))
+        dispatch(deleteProductFromInventory(selected))
         setSelected([]);
     };
 
@@ -47,7 +47,7 @@ const Options = ({ showLowStock, setShowLowStock, selected, setSelected }) => {
                     >
                         <DeleteIcon />&nbsp;Delete Selected
                     </Button>
-                    {/* Button to open the add books to inventory modal */}
+                    {/* Button to open the add Products to inventory modal */}
                     <Button
                         onClick={handleClickOpen}
                         variant='contained'

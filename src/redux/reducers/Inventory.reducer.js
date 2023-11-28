@@ -1,7 +1,7 @@
 import * as type from '../types.js';
 
-// Initial state for the addBookToInventoryReducer
-const initialAddBookToInventoryState = {
+// Initial state for the addProductToInventoryReducer
+const initialAddProductToInventoryState = {
     loading: false,
     data: '',
     errorMessage: '',
@@ -16,22 +16,22 @@ const initialInventoryState = {
     success: false
 }
 
-// Reducer for handling the ADD_BOOK_TO_INVENTORY_REQUESTED action
-export function addBookToInventoryReducer(state = initialAddBookToInventoryState, action) {
+// Reducer for handling the ADD_PRODUCT_TO_INVENTORY_REQUESTED action
+export function addProductToInventoryReducer(state = initialAddProductToInventoryState, action) {
     switch (action.type) {
-        case type.ADD_BOOK_TO_INVENTORY_REQUESTED:
+        case type.ADD_PRODUCT_TO_INVENTORY_REQUESTED:
             return {
                 ...state,
                 loading: true,
             }
-        case type.ADD_BOOK_TO_INVENTORY_SUCCESS:
+        case type.ADD_PRODUCT_TO_INVENTORY_SUCCESS:
             return {
                 ...state,
                 data: action.payload.data,
                 loading: false,
                 success: action.payload.success
             }
-        case type.ADD_BOOK_TO_INVENTORY_FAILED:
+        case type.ADD_PRODUCT_TO_INVENTORY_FAILED:
             return {
                 ...state,
                 loading: false,
@@ -42,22 +42,22 @@ export function addBookToInventoryReducer(state = initialAddBookToInventoryState
     }
 }
 
-// Reducer for handling the GET_ALL_BOOKS_FROM_INVENTORY_REQUESTED action
-export function getAllBooksFromInventoryReducer(state = initialInventoryState, action) {
+// Reducer for handling the GET_ALL_PRODUCTS_FROM_INVENTORY_REQUESTED action
+export function getAllProductsFromInventoryReducer(state = initialInventoryState, action) {
     switch (action.type) {
-        case type.GET_ALL_BOOKS_FROM_INVENTORY_REQUESTED:
+        case type.GET_ALL_PRODUCTS_FROM_INVENTORY_REQUESTED:
             return {
                 ...state,
                 loading: true,
             }
-        case type.GET_ALL_BOOKS_FROM_INVENTORY_SUCCESS:
+        case type.GET_ALL_PRODUCTS_FROM_INVENTORY_SUCCESS:
             return {
                 ...state,
                 data: action.payload.data,
                 loading: false,
                 success: action.payload.success
             }
-        case type.GET_ALL_BOOKS_FROM_INVENTORY_FAILED:
+        case type.GET_ALL_PRODUCTS_FROM_INVENTORY_FAILED:
             return {
                 ...state,
                 loading: false,
@@ -68,22 +68,22 @@ export function getAllBooksFromInventoryReducer(state = initialInventoryState, a
     }
 }
 
-// Reducer for handling the DELETE_BOOK_FROM_INVENTORY_REQUESTED action
-export function deleteBookFromInventoryReducer(state = initialInventoryState, action) {
+// Reducer for handling the DELETE_PRODUCT_FROM_INVENTORY_REQUESTED action
+export function deleteProductFromInventoryReducer(state = initialInventoryState, action) {
     switch (action.type) {
-        case type.DELETE_BOOK_FROM_INVENTORY_REQUESTED:
+        case type.DELETE_PRODUCT_FROM_INVENTORY_REQUESTED:
             return {
                 ...state,
                 loading: true,
             }
-        case type.DELETE_BOOK_FROM_INVENTORY_SUCCESS:
+        case type.DELETE_PRODUCT_FROM_INVENTORY_SUCCESS:
             return {
                 ...state,
                 data: action.payload.data,
                 loading: false,
                 success: action.payload.success
             }
-        case type.DELETE_BOOK_FROM_INVENTORY_FAILED:
+        case type.DELETE_PRODUCT_FROM_INVENTORY_FAILED:
             return {
                 ...state,
                 loading: false,
@@ -94,22 +94,22 @@ export function deleteBookFromInventoryReducer(state = initialInventoryState, ac
     }
 }
 
-// Reducer for handling the UPDATE_BOOK_FROM_INVENTORY_REQUESTED action
-export function updateBookFromInventoryReducer(state = initialAddBookToInventoryState, action) {
+// Reducer for handling the UPDATE_PRODUCT_FROM_INVENTORY_REQUESTED action
+export function updateProductFromInventoryReducer(state = initialAddProductToInventoryState, action) {
     switch (action.type) {
-        case type.UPDATE_BOOK_FROM_INVENTORY_REQUESTED:
+        case type.UPDATE_PRODUCT_FROM_INVENTORY_REQUESTED:
             return {
                 ...state,
                 loading: true,
             }
-        case type.UPDATE_BOOK_FROM_INVENTORY_SUCCESS:
+        case type.UPDATE_PRODUCT_FROM_INVENTORY_SUCCESS:
             return {
                 ...state,
                 data: action.payload.data,
                 loading: false,
                 success: action.payload.success
             }
-        case type.UPDATE_BOOK_FROM_INVENTORY_FAILED:
+        case type.UPDATE_PRODUCT_FROM_INVENTORY_FAILED:
             return {
                 ...state,
                 loading: false,
@@ -121,7 +121,7 @@ export function updateBookFromInventoryReducer(state = initialAddBookToInventory
 }
 
 // Reducer for handling the ADJUST_STOCK_REQUESTED action
-export function adjustStockByIdReducer(state = initialAddBookToInventoryState, action) {
+export function adjustStockByIdReducer(state = initialAddProductToInventoryState, action) {
     switch (action.type) {
         case type.ADJUST_STOCK_REQUESTED:
             return {

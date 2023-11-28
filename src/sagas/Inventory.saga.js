@@ -11,60 +11,60 @@ import {
 import * as type from "../redux/types.js";
 
 import {
-  addBookToInventoryApi,
-  getAllBooksFromInventoryApi,
-  deleteBookFromInventoryApi,
-  updateBookFromInventoryApi,
+  addProductToInventoryApi,
+  getAllProductsFromInventoryApi,
+  deleteProductFromInventoryApi,
+  updateProductFromInventoryApi,
   AdjustStockByIdApi,
 } from "../apis/inventory.api.js";
 import { toast } from "react-hot-toast";
 
-// add book to inventory sagas
-function* addBookToInventory(action) {
+// add product to inventory sagas
+function* addProductToInventory(action) {
   try {
-    const response = yield call(addBookToInventoryApi, action.payload);
+    const response = yield call(addProductToInventoryApi, action.payload);
 
-    yield put({ type: type.ADD_BOOK_TO_INVENTORY_SUCCESS, payload: response });
+    yield put({ type: type.ADD_PRODUCT_TO_INVENTORY_SUCCESS, payload: response });
 
     toast.success(response.message);
   } catch (error) {
-    yield put({ type: type.ADD_BOOK_TO_INVENTORY_FAILED });
+    yield put({ type: type.ADD_PRODUCT_TO_INVENTORY_FAILED });
 
     toast.error(response.error);
   }
 }
 
-export function* addBookToInventorySaga() {
-  yield takeEvery(type.ADD_BOOK_TO_INVENTORY_REQUESTED, addBookToInventory);
+export function* addProductToInventorySaga() {
+  yield takeEvery(type.ADD_PRODUCT_TO_INVENTORY_REQUESTED, addProductToInventory);
 }
 
-// get all books from inventory sagas
-function* getAllBooksFromInventory() {
+// get all products from inventory sagas
+function* getAllProductsFromInventory() {
     try {
-      const response = yield call(getAllBooksFromInventoryApi);
-      yield put({ type: type.GET_ALL_BOOKS_FROM_INVENTORY_SUCCESS, payload: response});
+      const response = yield call(getAllProductsFromInventoryApi);
+      yield put({ type: type.GET_ALL_PRODUCTS_FROM_INVENTORY_SUCCESS, payload: response});
     } catch (error) {
-      yield put({ type: type.GET_ALL_BOOKS_FROM_INVENTORY_FAILED });
+      yield put({ type: type.GET_ALL_PRODUCTS_FROM_INVENTORY_FAILED });
 
       toast.error(response.error);
     }
 
 }
 
-export function* getAllBooksFromInventorySaga() {
+export function* getAllProductsFromInventorySaga() {
   yield takeEvery(
-    type.GET_ALL_BOOKS_FROM_INVENTORY_REQUESTED,
-    getAllBooksFromInventory
+    type.GET_ALL_PRODUCTS_FROM_INVENTORY_REQUESTED,
+    getAllProductsFromInventory
   );
 }
 
-// delete book from inventory sagas
-function* deleteBookFromInventory(action) {
+// delete product from inventory sagas
+function* deleteProductFromInventory(action) {
   try {
-    const response = yield call(deleteBookFromInventoryApi, action.payload);
+    const response = yield call(deleteProductFromInventoryApi, action.payload);
 
     yield put({
-      type: type.DELETE_BOOK_FROM_INVENTORY_SUCCESS,
+      type: type.DELETE_PRODUCT_FROM_INVENTORY_SUCCESS,
       payload: response,
     });
 
@@ -72,24 +72,24 @@ function* deleteBookFromInventory(action) {
   } catch (error) {
     console.log("saga :", error);
     toast.error(error.message);
-    yield put({ type: type.DELETE_BOOK_FROM_INVENTORY_FAILED });
+    yield put({ type: type.DELETE_PRODUCT_FROM_INVENTORY_FAILED });
   }
 }
 
-export function* deleteBookFromInventorySaga() {
+export function* deleteProductFromInventorySaga() {
   yield takeEvery(
-    type.DELETE_BOOK_FROM_INVENTORY_REQUESTED,
-    deleteBookFromInventory
+    type.DELETE_PRODUCT_FROM_INVENTORY_REQUESTED,
+    deleteProductFromInventory
   );
 }
 
-// Update book from inventory sagas
-function* updateBookFromInventory(action) {
+// Update product from inventory sagas
+function* updateProductFromInventory(action) {
   try {
-    const response = yield call(updateBookFromInventoryApi, action.payload);
+    const response = yield call(updateProductFromInventoryApi, action.payload);
 
     yield put({
-      type: type.UPDATE_BOOK_FROM_INVENTORY_SUCCESS,
+      type: type.UPDATE_PRODUCT_FROM_INVENTORY_SUCCESS,
       payload: response,
     });
 
@@ -97,14 +97,14 @@ function* updateBookFromInventory(action) {
   } catch (error) {
     console.log("saga :", error);
     toast.error(error.message);
-    yield put({ type: type.UPDATE_BOOK_FROM_INVENTORY_FAILED });
+    yield put({ type: type.UPDATE_PRODUCT_FROM_INVENTORY_FAILED });
   }
 }
 
-export function* updateBookFromInventorySaga() {
+export function* updateProductFromInventorySaga() {
   yield takeEvery(
-    type.UPDATE_BOOK_FROM_INVENTORY_REQUESTED,
-    updateBookFromInventory
+    type.UPDATE_PRODUCT_FROM_INVENTORY_REQUESTED,
+    updateProductFromInventory
   );
 }
 

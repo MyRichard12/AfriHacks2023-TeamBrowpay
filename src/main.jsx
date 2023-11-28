@@ -9,7 +9,7 @@ import "./style.js"
 import { createBrowserRouter, RouterProvider} from "react-router-dom";
 import store from "./redux/store.js";
 import { Provider } from "react-redux";
-import {HomePage, Overview, Product, Pricing, NotFound, Dashboard, Register, Documentation, PasswordReset, PasswordConfirm, OtpConfirm, Gateway, LoginPage, Dashboard_new, Catalogue, Messaging, Profile, Sales, } from "./pages";
+import {HomePage, Overview, NotFound, Admin, Register, PasswordReset, PasswordConfirm, OtpConfirm, Gateway, LoginPage, Inventory, Profile, Sales, } from "./pages";
 import Protector from "./components/Protector.jsx";
 // import Gateway from "./pages/Gateway.jsx";
 // leave for now
@@ -29,18 +29,6 @@ const router = createBrowserRouter([
   {
     path: '/Overview',
     element: <Overview />
-  },
-  {
-    path: '/Pricing',
-    element: <Pricing />
-  },
-  {
-    path: '/Product',
-    element: <Product />
-  },
-  {
-    path: '/Documentation',
-    element: <Documentation />
   },
   {
     path: '/register',
@@ -63,31 +51,23 @@ const router = createBrowserRouter([
     element: <PasswordConfirm />
   },
   {
-    path: '/Dashboard_new',
-    element: <Dashboard_new/>
+    path: 'inventory',
+    element: <Inventory />
   },
   {
-    path: 'Catalogue',
-    element: <Catalogue />
-  },
-  {
-    path: 'Messaging',
-    element: <Messaging />
-  },
-  {
-    path: 'Profile',
+    path: 'profile',
     element: <Profile />
   },
   {
     path: '/dasher',
-    element: <Protector component={Dashboard} />
+    element: <Protector component={Admin} />
   },
   {
     path: '/dashboard',
     element: <Protector component={Gateway} />,
     children: [{
       path: '',
-      element: <Dashboard />
+      element: <Admin />
     }
     ]
   },

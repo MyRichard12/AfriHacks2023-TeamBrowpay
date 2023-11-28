@@ -1,10 +1,34 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import { Control, logo } from "../assets/icons";
-import { Menus } from "../constants";
 import { Link } from "react-router-dom";
+import Cookies from "universal-cookie";
+import { logoutUser } from "../redux/actions/authAction";
+
+
+
+import { Menus } from "../constants";
+import { close } from "../assets"; 
+
+const cooker = new Cookies()
 
 const Header = () => {
     const [open, setOpen] = useState(true);
+
+    const navigator = useNavigate()
+    const dispatch = useDispatch()
+
+    const Logout = () => {
+        cooker.remove("SECRETKEY", {
+            path: "/"
+        });
+        dispatch(logoutUser())
+       navigator('/login')
+    }
+    
+
+
     return (
         <div
             className={` ${
@@ -29,7 +53,7 @@ const Header = () => {
                 !open && "scale-0"
                 }`}
             >
-                <Link to="/">KudiKart</Link>
+                <Link to="/">Sellai</Link>
             </h1>
             </div>
             <ul className="pt-10">
@@ -47,6 +71,10 @@ const Header = () => {
                     </Link>                
                 </li>
             ))}
+            <li className={`flex rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm md:text-2xl items-center gap-x-4 mt-2`} onClick={() => Logout()}>
+            <img src={close} className="hidden md:flex" />
+                <div className={`${!open && "hidden"} origin-left duration-200`}>Logout</div>
+            </li>
             
             </ul>
         </div>

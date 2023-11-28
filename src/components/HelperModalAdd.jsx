@@ -5,7 +5,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import AddIcon from '@mui/icons-material/Add';
 import { Validation } from '../utils/Validation.js';
 import { useDispatch } from 'react-redux';
-import { addBookToInventory } from '../redux/actions/Inventory.action.js'
+import { addProductToInventory } from '../redux/actions/Inventory.action.js'
 
 const HelperModalAdd = ({ open, handleClose }) => {
 
@@ -56,7 +56,7 @@ const HelperModalAdd = ({ open, handleClose }) => {
         setFormError(errors);
 
         if (isValid) {
-            dispatch(addBookToInventory(formValues));
+            dispatch(addProductToInventory(formValues));
             handleClose();
         }
     }

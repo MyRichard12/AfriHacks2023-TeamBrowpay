@@ -2,26 +2,19 @@ const Menus = [
     { 
         title: "Dashboard", 
         src: "./icons/Chart_fill",
-        path: "/Dashboard_new",
+        path: "/dashboard",
     },
     { 
-        title: "Catalogue", 
-        path: "/Catalogue", 
+        title: "Inventory", 
+        path: "/inventory", 
         src: "./icons/Folder" 
     },
-    { 
-        title: "Messaging",
-        path: "/Messaging",
-        src: "./icons/Chat" 
-    },
-    { 
+   { 
         title: "My Account", 
-        path: "/Profile",
+        path: "/profile",
         src: "./icons/User", 
         gap: true 
     },
-    { title: "Search", src: "./icons/Search" },
-    { title: "Analytics", src: "./icons/Chart" },
     { title: "Setting", src: "./icons/Setting" },
 ];
 

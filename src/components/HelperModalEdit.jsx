@@ -21,7 +21,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import AddIcon from "@mui/icons-material/Add";
 import { Validation } from "../utils/Validation.js";
 import { useDispatch } from "react-redux";
-import { updateBookFromInventory } from "../redux/actions/Inventory.action.js";
+import { updateProductFromInventory } from "../redux/actions/Inventory.action.js";
 
 const HelperModalEdit = ({ open, handleClose, editData }) => {
   // State for storing selected files
@@ -74,7 +74,7 @@ const HelperModalEdit = ({ open, handleClose, editData }) => {
     setFormError(errors);
 
     if (isValid) {
-      dispatch(updateBookFromInventory(formValues));
+      dispatch(updateProductFromInventory(formValues));
       handleClose();
     }
   };
