@@ -5,7 +5,7 @@ function Navbar() {
     <nav className="w-full flex py-6 justify-between items-center navbar">
       <h1 className='text-[25px] sm:text-[30px] font-bold'><Link to="/">SalesAI&trade;</Link></h1>
 
-      <div className='flex gap-5'>
+      <div className='flex gap-5 items-center'>
         <ul className="text-[20px] list-none sm:flex justify-end items-center flex-1 gap-10 text-black">
           <Link to="/Sales">Start Sales</Link>
         </ul>
@@ -17,4 +17,4 @@ function Navbar() {
   )
 }
 
-export default Navbar
+export default Navbar;
