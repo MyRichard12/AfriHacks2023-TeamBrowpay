@@ -7,7 +7,7 @@ const Dashboard = () => {
       <div>
         <Header />
       </div>
-      <div className="h-screen flex-1 bg-slate-400 p-7">
+      <div className="h-screen flex-1 bg-gray-50 p-7">
         <h1 className="text-2xl font-semibold ">Inventory</h1>
         <p>Dashboard list</p>
         <div className="flex gap-3 mt-3 flex-wrap">

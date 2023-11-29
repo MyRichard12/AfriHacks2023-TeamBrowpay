@@ -15,9 +15,9 @@ const Menus = [
         src: "./icons/User", 
         gap: true 
     },
-    { 
-        title: "Setting", 
-        src: "./icons/Setting" },
+    // { 
+    //     title: "Setting", 
+    //     src: "./icons/Setting" },
 ];
 
 export {
