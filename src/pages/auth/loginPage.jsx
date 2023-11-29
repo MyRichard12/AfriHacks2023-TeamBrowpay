@@ -11,13 +11,12 @@ import { Toaster } from "react-hot-toast";
 import { banner_1 } from "../../assets";
 
 
+
 function Copyright(props) {
     return (
       <Typography variant="body2" color="text.secondary" align="center" {...props}>
-        SalesAI&trade; by
-        <Link color="inherit" href="https://browpay.com">
-        {' '}Browpay
-        </Link>{' '}
+        {'Copyright © '} Sales-AI By   
+        <Link color="inherit" href="https://browpay.com">Browpay</Link>{' '}
         {new Date().getFullYear()}
         {'.'}
       </Typography>
@@ -72,95 +71,79 @@ const LoginPage = () => {
 
     return (
         <>
-        <ThemeProvider theme={defaultTheme} />
-        <div className="flex flex-wrap w-full h-screen justify-center bg-gray-100">
-        {/* <CssBaseline /> */}
-      <Toaster />
-      <div className="flex w-[80%] items-center">
-        <div>
-          <div className="hidden md:flex flex-col w-[70%]">
-            <img src={banner_1} className="w-full m-auto" alt="banner" />
-          </div>
-        </div>
-        
-        <div>
-          <Nav to={`/`} className="w-full sm:w-4/5 md:w-4/5 mx-auto mt-28 md:mt-auto mb-4 text-center text-4xl font-semibold text-orange-700">
-            SalesAI&trade; 
-          </Nav>
-          <div className="w-full sm:w-4/5 md:w-4/5 mx-auto bg-white p-6 md:p-12 h-fit shadow-md rounded-lg">
-        <Box
-          sx={{
-            marginTop: 2,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-          }}
+          <ThemeProvider theme={defaultTheme} />
+          <div className="flex w-[80%] justify-between mx-auto h-screen items-center">
+            <div className='hidden md:flex flex-col w-full md:w-3/5 sm:w-3/5'>
+              <img src={banner_1} className="w-[70%] m-auto" alt="banner" />
+            </div>
 
-          component={``}
-        >
-         <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 0 }}>
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              id="email"
-              label="Email Address"
-              name="email"
-              type="email"
-              // autoComplete="email"
-              autoFocus
-              onChange={handleInput}
-            />
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              name="password"
-              label="Password"
-              type="password"
-              id="password"
-              // autoComplete="current-password"
-              onChange={handleInput}
-            />
-            <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
-              label="Remember me"
-            />
-            <Button
-              type="submit"
-              fullWidth
-              className="bg-orange-900"
-              variant="contained"
-              sx={{ mt: 3, mb: 2 }}
-              onClick={handleSubmit}
-            >
-              Sign In
-            </Button>
-            <Grid container>
-              <Grid item xs>
-                <Nav to="/reset-password" variant="body2">
-                  Forgot password?
-                </Nav>
-              </Grid>
-              <Grid item>
-                <Nav to="/register" variant="body2">
-                  {"Don't have an account? Sign Up"}
-                </Nav>
-              </Grid>
-            </Grid>
-          </Box>
-        </Box>
-        </div>
-        </div>
-      </div>
-        
-        <div className="flex flex-col w-full sm:w-2/5 md:w-2/5">
-        
-        
-        
-        <Copyright sx={{ mt: 8, mb: 4 }} />
-        </div>
-      </div>
+            <div className='block'>
+              <Box
+                sx={{
+                    marginTop: 8,
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    padding: '50px',
+                  }}
+
+                  component={Paper}
+              >
+                <Nav to={`/`} className="mx-auto mt-28 md:mt-auto mb-4 text-center text-4xl font-semibold text-blue-400">Sale-AI&trade; </Nav>                
+                <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+                  <TextField
+                    margin="normal"
+                    required
+                    fullWidth
+                    id="email"
+                    label="Email Address"
+                    name="email"
+                    type="email"
+                    // autoComplete="email"
+                    autoFocus
+                    onChange={handleInput}
+                  />
+                  <TextField
+                    margin="normal"
+                    required
+                    fullWidth
+                    name="password"
+                    label="Password"
+                    type="password"
+                    id="password"
+                    // autoComplete="current-password"
+                    onChange={handleInput}
+                  />
+                  <FormControlLabel
+                    control={<Checkbox value="remember" color="primary" />}
+                    label="Remember me"
+                  />
+                  <Button
+                    type="submit"
+                    fullWidth
+                    variant="contained"
+                    sx={{ mt: 3, mb: 2 }}
+                    onClick={handleSubmit}
+                  >
+                    Sign In
+                  </Button>
+                  <Grid container>
+                    <Grid item xs>
+                      <Nav to="/reset-password" variant="body2">
+                        Forgot password?
+                      </Nav>
+                    </Grid>
+                    <Grid item>
+                      <Nav to="/register" variant="body2">
+                        {"Don't have an account? Sign Up"}
+                      </Nav>
+                    </Grid>
+                  </Grid>
+                </Box>
+              </Box>
+            <Copyright sx={{ mt: 8, mb: 4 }} />
+            </div>
+          </div>
         </>
     )
 }
