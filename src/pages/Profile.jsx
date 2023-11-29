@@ -1,8 +1,13 @@
 import { people01 } from "../assets"
 import { Header } from "../components"
+import { useSelector } from "react-redux"
+// import { mainUserReducer } from "../redux/reducers/userReducer"
+
+
 
 
 const Profile = () => {
+  const activeUser = useSelector(state => state.mainUserReducer)
   return (
     <div className="flex h-screen">
       <div>
@@ -16,8 +21,8 @@ const Profile = () => {
           </div>
 
           <div className="border border-blue-400 p-10">
-            <h1>Name: Admin</h1>
-            <h1>Email: admin@sale-ai.com</h1>
+            <h1>Name: {activeUser?.data?.data?.name}</h1>
+            <h1>Email: {activeUser?.data?.data?.email}</h1>
             <h1>Phone Number: 080******258</h1>
           </div>
         </div>

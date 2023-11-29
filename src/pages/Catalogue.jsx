@@ -36,8 +36,8 @@ function Inventory({user}) {
      await delay(1000)
      dispatch(getAllProductsFromInventory());
     }
-    if(userData.data?.status == true){
-      delayer()
+    if(userData.data?.status == true){  
+     delayer()
   }
   }, [addInventoryData.data, updateInventoryData.data, deleteInventoryData.data, adjustStockData.data, userData.data])
 
@@ -50,7 +50,7 @@ function Inventory({user}) {
       </div>
       <div className="app h-screen flex-1 p-7">
         <Box style={{ display: "flex" }}>
-          <h1>Welcome back</h1>{userData?.name}
+          <h1>Welcome back</h1>
         </Box>
         <Options showLowStock={showLowStock} setShowLowStock={setShowLowStock} selected={selected} setSelected={setSelected} />
         {
