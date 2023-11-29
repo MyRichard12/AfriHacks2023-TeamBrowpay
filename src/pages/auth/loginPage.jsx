@@ -21,12 +21,12 @@ function Copyright(props) {
         {'.'}
       </Typography>
     );
-  }
+}
 
-  const initialValues = {
-    email: '',
-    password: ''
-  }
+const initialValues = {
+  email: '',
+  password: ''
+}
 
 const defaultTheme = createTheme();
 
@@ -148,4 +148,4 @@ const LoginPage = () => {
     )
 }
 
-export default LoginPage
+export default LoginPage;

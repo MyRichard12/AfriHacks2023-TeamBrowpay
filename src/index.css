@@ -195,3 +195,8 @@
 .flex-between {
   @apply flex justify-between items-center;
 }
+
+.input{
+  padding: 12px;
+  border-radius: 8px;
+}
