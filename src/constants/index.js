@@ -10,12 +10,14 @@ const Menus = [
         src: "./icons/Folder" 
     },
    { 
-        title: "My Account", 
+        title: "My Profile", 
         path: "/profile",
         src: "./icons/User", 
         gap: true 
     },
-    { title: "Setting", src: "./icons/Setting" },
+    { 
+        title: "Setting", 
+        src: "./icons/Setting" },
 ];
 
 export {
