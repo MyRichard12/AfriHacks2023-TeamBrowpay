@@ -133,11 +133,11 @@ const LoginPage = () => {
                         Forgot password?
                       </Nav>
                     </Grid>
-                    <Grid item>
+                    {/* <Grid item>
                       <Nav to="/register" variant="body2">
                         {"Don't have an account? Sign Up"}
                       </Nav>
-                    </Grid>
+                    </Grid> */}
                   </Grid>
                 </Box>
               </Box>
