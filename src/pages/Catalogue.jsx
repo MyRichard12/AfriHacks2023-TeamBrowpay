@@ -5,7 +5,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getAllProductsFromInventory } from '../redux/actions/Inventory.action.js';
 // import { authReducer } from '../redux/reducers/AuthReducer.js';
 import { Box, Skeleton } from '@mui/material';
-import Footer from '../components/Footer.jsx';
 
 
 function Inventory({user}) {
@@ -76,8 +75,6 @@ function Inventory({user}) {
             )
         }
         {user}
-
-        <Footer />
       </div>
       </div>      
     </>
