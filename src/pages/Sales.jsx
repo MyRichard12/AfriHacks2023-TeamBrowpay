@@ -103,7 +103,7 @@ function Sales() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-  //  console.log(formField)
+   console.log(formField)
 
   }
 
