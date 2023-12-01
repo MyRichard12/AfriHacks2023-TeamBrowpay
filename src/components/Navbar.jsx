@@ -7,7 +7,7 @@ function Navbar() {
 
       <div className='flex gap-5 items-center'>
         <ul className="text-[20px] list-none sm:flex justify-end items-center flex-1 gap-10 text-black">
-          <Link to="/Sales">Start Sales</Link>
+          <Link to="/sales">Start Sales</Link>
         </ul>
         <Link to='/login' className="px-6 py-2 rounded text-[18px] bg-blue-400 shadow-md hover:bg-yellow-400">Login</Link>
       </div>
