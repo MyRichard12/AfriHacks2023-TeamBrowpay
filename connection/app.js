@@ -31,7 +31,7 @@ app.use(corsHandler);
 app.use(cors());
 
 // Mount the router on the /api/v1 prefix
-app.use("/api/v1", invoiceRouter);
+app.use("/api/v1", router);
 
 router.get("/", async (req, res) => {
   res.status(200).send("Root route");

@@ -1,12 +1,12 @@
 import Invoice from "../models/invoice.model.js";
 import InvoiceItem from "../models/invoiceItem.model.js";
-import mongoose from "mongoose";
+
 
 // Create a new invoice with associated invoice items
 export const createInvoice = async (req, res) => {
   try {
     const { customerName, invoiceID, invoiceDate, products } = req.body;
-    console.log("Request Body:", req.body);
+    // console.log("Request Body:", req.body);
 
     // Create an array to store InvoiceItem documents
     const invoiceItems = [];

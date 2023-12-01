@@ -29,11 +29,13 @@ import {
   verifyRegToken,
 } from "./controllers/userController.js";
 import { regVerificationEmail, registerMail } from "./controllers/mailer.js";
-import {
-  createInvoice,
-  getAllInvoices,
-} from "./controllers/invoice.controller.js";
+// import {
+//   createInvoice,
+//   getAllInvoices,
+// } from "./controllers/invoice.controller.js";
 
+
+// ----- Inventory Endpoints
 // Route for adding a Product to the inventory
 router.post("/inventory/Products/add", auth, addProductToInventory);
 
