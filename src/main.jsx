@@ -6,11 +6,13 @@ import "./index.css";
 import "./style.js"
 
 
-import { createBrowserRouter, RouterProvider} from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import store from "./redux/store.js";
 import { Provider } from "react-redux";
-import {HomePage, Overview, NotFound, Admin, Register, PasswordReset, PasswordConfirm, OtpConfirm, Gateway, LoginPage, Inventory, Profile, Sales, } from "./pages";
+import { HomePage, Overview, NotFound, Admin, Register, PasswordReset, PasswordConfirm, OtpConfirm, Gateway, LoginPage, Inventory, Profile, Sales, } from "./pages";
 import Protector from "./components/Protector.jsx";
+import InvoiceTable from "./pages/Invoicetable.jsx";
+import InvoicePreview from "./pages/Preview.jsx";
 // import Gateway from "./pages/Gateway.jsx";
 // leave for now
 
@@ -63,6 +65,14 @@ const router = createBrowserRouter([
     element: <Protector component={Admin} />
   },
   {
+    path: '/table',
+    element: <Protector component={InvoiceTable} />
+  },
+  {
+    path: '/invoice/:id/view',
+    element: <Protector component={InvoicePreview} />
+  },
+  {
     path: '/dashboard',
     element: <Protector component={Gateway} />,
     children: [{
@@ -74,9 +84,9 @@ const router = createBrowserRouter([
 ])
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode> 
-      <Provider store={store} >
-        <RouterProvider router={router} />
-      </Provider>
+  <React.StrictMode>
+    <Provider store={store} >
+      <RouterProvider router={router} />
+    </Provider>
   </React.StrictMode>
 );

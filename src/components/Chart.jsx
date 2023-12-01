@@ -65,8 +65,6 @@ const LineChart = () => {
             data,
             options,
         });
-
-        // Cleanup the chart when the component unmounts
         return () => {
             lineChart.destroy();
         };

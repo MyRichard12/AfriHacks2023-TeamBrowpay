@@ -1,19 +1,24 @@
 const Menus = [
-    { 
-        title: "Dashboard", 
+    {
+        title: "Dashboard",
         src: "./icons/Chart_fill",
         path: "/dashboard",
     },
-    { 
-        title: "Inventory", 
-        path: "/inventory", 
-        src: "./icons/Folder" 
+    {
+        title: "Inventory",
+        path: "/inventory",
+        src: "./icons/Folder"
     },
-   { 
-        title: "My Profile", 
+    {
+        title: "Invoice Table",
+        path: "/table",
+        src: "./icons/Folder"
+    },
+    {
+        title: "My Profile",
         path: "/profile",
-        src: "./icons/User", 
-        gap: true 
+        src: "./icons/User",
+        gap: true
     },
     // { 
     //     title: "Setting", 
