@@ -53,7 +53,7 @@ const Header = () => {
                 !open && "scale-0"
                 }`}
             >
-                <Link to="/">Sellai</Link>
+                <Link to="/">MySeller.ai</Link>
             </h1>
             </div>
             <ul className="pt-10">
