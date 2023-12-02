@@ -5,20 +5,20 @@ import InvoiceItem from "../models/invoiceItem.model.js";
 // Create a new invoice with associated invoice items
 export const createInvoice = async (req, res) => {
   try {
-    const { customerName, invoiceID, invoiceDate, products } = req.body;
+    const { customerEmail, invoiceID, invoiceDate, products, total, subTotal, discount, tax, currency  } = req.body;
     // console.log("Request Body:", req.body);
 
     // Create an array to store InvoiceItem documents
     const invoiceItems = [];
 
-    // Iterate over products and create InvoiceItem documents
+    // Iterate over products and cre  ate InvoiceItem documents
     for (const product of products) {
-      const { productName, quantity, unitPrice, totalPrice } = product;
+      const { productName, quantity, unitPrice, price } = product;
       const invoiceItem = new InvoiceItem({
         productName,
         quantity,
         unitPrice,
-        totalPrice,
+        price
       });
       console.log("Saving InvoiceItem:", invoiceItem);
       await invoiceItem.save();
@@ -27,11 +27,16 @@ export const createInvoice = async (req, res) => {
 
     // Create the main Invoice document with a reference to the InvoiceItem documents
     const newInvoice = new Invoice({
-      customerName,
+      customerEmail,
       invoiceID,
       invoiceDate,
       adminID: req?.user?.id,
       products: invoiceItems,
+      currency,
+      tax,
+      discount,
+      subTotal,
+      total
     });
     console.log("Saving Invoice:", newInvoice);
     await newInvoice.save();
@@ -55,7 +60,10 @@ export const createInvoice = async (req, res) => {
 export const getAllInvoices = async (req, res) => {
   try {
     // Populate the 'products' field to get details of associated invoice items
-    const allInvoices = await Invoice.find({ adminID: req?.user?.id }).populate(
+    // const allInvoices = await Invoice.find({ adminID: req?.user?.id }).populate(
+    //   "products"
+    // );
+    const allInvoices = await Invoice.find().populate(
       "products"
     );
 

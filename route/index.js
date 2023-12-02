@@ -11,6 +11,7 @@ import {
   adjustStockById,
   deleteProductFromInventory,
   getAllProductsFromInventory,
+  getInvoiceInventory,
   updateProductFromInventory,
 } from "../controllers/inventory.controller.js";
 
@@ -40,36 +41,40 @@ invoiceRoute.post("/invoice/create", createInvoice);
 // Route for getting all invoices with associated invoice items
 invoiceRoute.get("/invoice/all", getAllInvoices);
 
+// invoice inventory population route
+invoiceRoute.get("/inventory/items/all", getInvoiceInventory);
+
+
 // ------------ INVENTORY ROUTES
 const inventoryRoute = router;
 
 // ----- Inventory Endpoints
 // Route for adding a Product to the inventory
-inventoryRoute.post("/inventory/Products/add", auth, addProductToInventory);
+inventoryRoute.post("/inventory/products/add", auth, addProductToInventory);
 
 // Route for getting all Products from the inventory
 inventoryRoute.get(
-  "/inventory/Products/all",
+  "/inventory/products/all",
   auth,
   getAllProductsFromInventory
 );
 
 // Route for deleting a Product from the inventory
 inventoryRoute.post(
-  "/inventory/Products/delete",
+  "/inventory/products/delete",
   auth,
   deleteProductFromInventory
 );
 
 // Route for updating a Product in the inventory
 inventoryRoute.post(
-  "/inventory/Products/update",
+  "/inventory/products/update",
   auth,
   updateProductFromInventory
 );
 
 // Route for adjusting the stock of a Product in the inventory by ID
-inventoryRoute.post("/inventory/Products/update/:id", auth, adjustStockById);
+inventoryRoute.post("/inventory/products/update/:id", auth, adjustStockById);
 
 // ----- USER ROUTES
 // user authentication routes --- REGISTRATION AND VERIFICATION
