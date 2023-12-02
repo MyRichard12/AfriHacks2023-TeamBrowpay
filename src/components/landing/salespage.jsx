@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback, forwardRef } from "react";
 import { Toaster, toast } from "react-hot-toast";
+
 import {
   Container,
   Card,
@@ -492,7 +493,7 @@ export const SalesPage = () => {
           >
             Submit
           </Button>
-          <AlertComp payload={callBack} onClose={handleDialog} />
+          {/* <AlertComp payload={callBack} onClose={handleDialog} /> */}
         </form>
       </div>
     </>
@@ -503,6 +504,8 @@ const AlertComp = ({ payload, onClose }) => {
   const Transition = React.forwardRef((props, ref) => (
     <Slide direction="up" ref={ref} {...props} />
   ));
+
+
 
   const handleClose = () => {
     onClose(false)
