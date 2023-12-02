@@ -53,32 +53,32 @@ const router = createBrowserRouter([
     element: <PasswordConfirm />
   },
   {
-    path: 'inventory',
-    element: <Inventory />
-  },
-  {
-    path: 'profile',
-    element: <Profile />
-  },
-  {
     path: '/dasher',
     element: <Protector component={Admin} />
   },
-  {
-    path: '/table',
-    element: <Protector component={InvoiceTable} />
-  },
-  {
-    path: '/invoice/:id/view',
-    element: <Protector component={InvoicePreview} />
-  },
-  {
-    path: '/dashboard',
+ {
+    path: '',
     element: <Protector component={Gateway} />,
     children: [{
-      path: '',
+      path: 'dashboard',
       element: <Admin />
-    }
+    },
+    {
+      path: 'inventory',
+      element: <Inventory />
+    },
+    {
+      path: 'profile',
+      element: <Profile />
+    },
+    {
+      path: '/invoices',
+      element: <InvoiceTable />
+    },
+    {
+      path: '/invoice/:id/view',
+      element: <InvoicePreview />
+    },
     ]
   },
 ])

@@ -17,7 +17,7 @@ const InvoiceTable = () => {
                 <Header />
             </div>
             <div className='p-7 w-full'>
-                <h1 className='text-3xl mb-4'>Invoice Table</h1>
+                <h1 className='text-3xl mb-4'>Invoices</h1>
                 <table className='min-w-full border border-gray-300 w-1'>
                     <thead>
                         <tr className='bg-gray-100'>

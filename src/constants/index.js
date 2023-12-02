@@ -10,8 +10,8 @@ const Menus = [
         src: "./icons/Folder"
     },
     {
-        title: "Invoice Table",
-        path: "/table",
+        title: "Invoices",
+        path: "/invoices",
         src: "./icons/Folder"
     },
     {
