@@ -1,11 +1,10 @@
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { Toaster } from 'react-hot-toast';
 import { Navbar } from '../components';
 import { motion } from 'framer-motion'
 import { staggerContainer, fadeIn, textVariant } from '../utils/motion'
 
 import { SalesPage } from '../components/landing/salespage';
-
-
 
 const defaultTheme = createTheme();
 
@@ -33,9 +32,9 @@ function Sales() {
             </motion.div>          
           </div>
         </motion.div>
-
+        <Toaster />
         <SalesPage />
-        
+
       </div>
 
       
