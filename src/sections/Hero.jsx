@@ -14,8 +14,8 @@ const Hero = () => {
             >
                 <div>
                     <motion.div variants={textVariant(1.1)} >
-                        <h1 className="head_text blue_gradient sm:text-center">Sales without borders</h1>
-                        <h1 className="text-[18px] font-bold mt-5 sm:text-[20px] sm:text-center">Amplify your business with our data-centric, performance-driven digital sales solutions.</h1>
+                        <h1 className="head_text blue_gradient sm:text-center">How big can your business grow with data?</h1>
+                        <h1 className="text-[18px] font-bold mt-5 sm:text-[20px] sm:text-center">Amplify your business with our data-centric, performance-driven AI sales solutions.</h1>
                     </motion.div>
 
                     <div className="mt-8 md:mt-6" />
