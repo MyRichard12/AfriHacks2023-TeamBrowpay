@@ -47,7 +47,7 @@ function Inventory({user}) {
       <div>
       <Header />
       </div>
-      <div className="app h-screen flex-1 p-7">
+      <div className="h-screen flex-1 p-7">
         <Box style={{ display: "flex" }}>
           <h1>Welcome back</h1>
         </Box>
