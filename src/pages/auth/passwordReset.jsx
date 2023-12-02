@@ -12,7 +12,7 @@ import axios from "axios";
 function Copyright(props) {
     return (
       <Typography variant="body2" color="text.secondary" align="center" {...props}>
-        KudiKart&trade; by
+        SellerAI&trade; by
         <Link color="inherit" href="https://browpay.com">
         {' '}Browpay
         </Link>{' '}
