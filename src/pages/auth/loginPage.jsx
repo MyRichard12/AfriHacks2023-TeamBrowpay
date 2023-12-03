@@ -89,7 +89,7 @@ const LoginPage = () => {
 
                   component={Paper}
               >
-                <Nav to={`/`} className="mx-auto mt-28 md:mt-auto mb-4 text-center text-4xl font-semibold text-blue-400">Sale-AI&trade; </Nav>                
+                <Nav to={`/`} className="mx-auto mt-28 md:mt-auto mb-4 text-center text-4xl font-semibold text-blue-400">MySeller.ai </Nav>                
                 <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
                   <TextField
                     margin="normal"
